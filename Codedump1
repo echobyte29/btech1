@@ -1,0 +1,106 @@
+
+/*1. You have a list of temperatures for each day of the week. find the highest and lowest 
+temperature and calculate the average temperature for the week.*/
+#include<stdio.h>
+int main(void){
+int t[7],sum=0;// no of days in a wwek is 7, taking initial sum of temp as 0
+for(int i=0;i<7;i++)// loop runs for 7 times
+{
+    scanf("%d",&t[i]);
+    sum+=t[i];// calcuating sum of temperatues as loop moves forward
+}
+int high=t[0]; // first temp in array
+int low=t[0]; // first temp in array
+float avg=sum/7; // avg of temps
+for (int i=1;i<7;i++){ // starts from 2nd element in array and compares with
+    if (t[i]>t[0]){ //  1st elemnt in array to get high and low temps
+        high=t[i];
+    }
+    else if (t[i]<t[0]){
+        low=t[i];
+    }
+}
+printf("%d\n%d\n%.2f\n",high,low,avg);
+}
+
+/*You have an array of product prices, find the most expensive product and the least 
+expensive product, along with their prices.*/
+#include<stdio.h>
+int main(void){
+    int n;
+    scanf("%d",&n);
+    int p[n];
+    for (int i=0;i<n;i++){
+        scanf("%d",&p[i]);
+       int price=p[i];
+        printf("The price of item %d is %d\n",i+1,price);
+    }
+    int high=p[0];
+    int low=p[0];
+    for (int i=1;i<n;i++){
+        if(p[i]<p[0]){
+            low=p[i];
+        }
+        if(p[i]>p[0]){
+            high=p[i];
+        }
+        
+    }
+    printf("Highest price is %d\nLowest price is %d\n",high,low);
+}
+	
+/*You have an array of product prices, find the most expensive product and the least 
+expensive product, along with their prices.*/
+#include<stdio.h>
+int main(void){
+    int n;
+    scanf("%d",&n);
+    int p[n];
+    for (int i=0;i<n;i++){
+        scanf("%d",&p[i]);
+       int price=p[i];
+        printf("The price of %dst item is %d\n",i+1,price);
+    }
+    int high=p[0];
+    int low=p[0];
+    for (int i=1;i<n;i++){
+        if(p[i]>p[0]){
+            high=p[i];
+        }
+        else if(p[i]<p[0]){
+            low=p[i];
+        }
+    }
+    printf("Highest price is %d\n4Lowest price is %d\n",high,low);
+}
+
+/*You have a chessboard, find the number of white and black chess pieces on the board*/
+#include<stdio.h>
+#include<math.h>
+int main(void){
+    int a;
+    scanf("%d",&a);
+    float sqrt_a = sqrt(a);
+    if (sqrt_a == (int)sqrt_a) printf("No. of white chess pieces are %d and \nNo. of black chess pieces are %d",a/2,a/2);
+    else printf("It is not a proper chessboard");
+}
+
+/*4. You are given a seating chart in a theater. Write a C program to find the number of available 
+seats and the number of occupied seats.*/
+#include<stdio.h>
+int main(void){
+int n;
+scanf("%d",&n);
+int a[n];
+int x=0,y=0;
+for (int i=0;i<n;i++){
+scanf("%d",&a[n]);
+if (a[n]==0){
+x++;
+}
+else {
+    y++;
+}
+}
+printf("Available seats are %d and\nOccupied seats are %d",x,y);
+}
