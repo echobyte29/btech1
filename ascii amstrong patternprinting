@@ -1,9 +1,9 @@
 //ASCII VALUES OF A GIVEN ALPHABET
 #include <stdio.h>
 int main() {  
-    char c;
-    scanf("%c", &c);  
-    printf("ASCII value of %c = %d", c, c);
+    for(int i=65;i<=90;i++){  
+    printf("%c\n",i);
+}
     return 0;
 }
 
