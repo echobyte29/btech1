@@ -1,0 +1,80 @@
+//ASCII VALUES OF A GIVEN ALPHABET
+#include <stdio.h>
+int main() {  
+    char c;
+    scanf("%c", &c);  
+    printf("ASCII value of %c = %d", c, c);
+    return 0;
+}
+
+
+//PALINDROME
+/*#include<stdio.h>
+int main(void){
+int x;
+scanf("%d",&x);
+int t=x;
+int r=0,sum,rem;
+while(x!=0){
+rem=x%10;
+r=(r*10)+rem;
+x=x/10;
+if (x==r)
+printf("YES");
+else
+printf("NO");                                                                                                                                                                                        
+}
+}*/
+
+#include<stdio.h>
+int main(void){
+int remainder,reverse=0,n,original;
+scanf("%d",&n);
+original=n;
+while(n!=0){
+    remainder=n%10;
+    reverse=reverse*10+remainder;
+    n/=10;
+}
+if(reverse==original){
+    printf("yes\n");
+}else{
+printf("no\n");
+}
+return 0;
+}
+
+
+//ARMSTRONG NUMBER (153=1^3+5^3+3^3)
+#include<stdio.h>
+int main(void){
+    int x;
+    scanf("%d",&x);
+    int t=x;
+    int r=0,l,s;
+    while(x!=0){
+    l=x%10;
+    s=(l*l*l);
+    r=r+s;
+    x=x/10;
+    }
+        if(r==t)
+        printf("YES");
+        else
+        printf("NO");
+    }
+
+
+//PATTERN PRINTING
+/*FOR NUMBERS*/
+#include<stdio.h>
+int main(void){
+int a;
+scanf("%d",&a);
+for(int i=1;i<=a;i++){
+for(int j=1;j<=i;j++){
+printf("%d",j);
+}
+printf("\n");
+}
+}
