@@ -49,30 +49,6 @@ int main(void){
     printf("Highest price is %d\nLowest price is %d\n",high,low);
 }
 	
-/*You have an array of product prices, find the most expensive product and the least 
-expensive product, along with their prices.*/
-#include<stdio.h>
-int main(void){
-    int n;
-    scanf("%d",&n);
-    int p[n];
-    for (int i=0;i<n;i++){
-        scanf("%d",&p[i]);
-       int price=p[i];
-        printf("The price of %dst item is %d\n",i+1,price);
-    }
-    int high=p[0];
-    int low=p[0];
-    for (int i=1;i<n;i++){
-        if(p[i]>p[0]){
-            high=p[i];
-        }
-        else if(p[i]<p[0]){
-            low=p[i];
-        }
-    }
-    printf("Highest price is %d\n4Lowest price is %d\n",high,low);
-}
 
 /*You have a chessboard, find the number of white and black chess pieces on the board*/
 #include<stdio.h>
@@ -103,4 +79,27 @@ else {
 }
 }
 printf("Available seats are %d and\nOccupied seats are %d",x,y);
+}
+
+
+/*5. : Implement a program that compresses a string by replacing repeated characters with their 
+count. For example, "aaabbbccc" should become "a3b3c3."*/
+#include<stdio.h>
+int main(void){
+int n;
+scanf("%d",&n);
+char a[n];
+scanf("%s",a);
+int x=0,y=0,z=0;
+for(int i=0;i<n;i++){
+if (a[i]=='a'){
+x++;
+}
+else if (a[i]=='b'){
+    y++;
+}
+else if (a[i]=='c'){
+    z++;
+}
+printf("a%db%dc%d",x,y,z);
 }
