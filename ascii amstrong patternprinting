@@ -78,3 +78,21 @@ printf("%d",j);
 printf("\n");
 }
 }
+
+//FACTORIAL
+#include <stdio.h>
+int fact();
+void main(){
+    int n, result;
+    scanf("%d",&n);
+    result = fact(n);
+    printf("%d", result);
+}
+int fact(int n){
+    if(n!=0){
+        return n*fact(n-1);
+    }
+        else{
+            return 1;
+        }
+}
