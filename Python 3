@@ -1,0 +1,9 @@
+// Printing Hello World in Python 3
+print("Hello, World!");
+
+//reading an integer value: n=int(input())
+
+//if and else if syntax: if n%2!=0:
+                        print("Weird")
+                        elif (n%2==0 and 2<=n<=5):
+                        print("Not Weird")
