@@ -7,3 +7,7 @@ print("Hello, World!");
                         print("Weird")
                         elif (n%2==0 and 2<=n<=5):
                         print("Not Weird")
+
+my_name = "Codecademy"
+print("Hello and welcome " + my_name + "!")
+output: Hello and welcome Codecademy!
