@@ -1,9 +1,9 @@
-// Printing Hello World in Python 3
+#Printing Hello World in Python 3
 print("Hello, World!");
 
-//reading an integer value: n=int(input())
+#reading an integer value: n=int(input())
 
-//if and else if syntax: if n%2!=0:
+#if and else if syntax: if n%2!=0:
                         print("Weird")
                         elif (n%2==0 and 2<=n<=5):
                         print("Not Weird")
@@ -12,22 +12,27 @@ my_name = "Codecademy"
 print("Hello and welcome " + my_name + "!")
 output: Hello and welcome Codecademy!
 
-//arithmetic operators
+#arithmetic operators
 if __name__ == '__main__':
     a = int(input())
     b = int(input())
     print("%d\n%d\n%d"%(a+b,a-b,a*b))
 
-//integer division and float division
+#integer division and float division
 if __name__ == '__main__':
     a = int(input())
     b = int(input())
     print("%d\n%f"%(a//b,a/b))
 
-//loops
+#loops
 if __name__ == '__main__':
     n = int(input())
     for i in range(n):
         print(i*i)
 
-
+#print function
+if __name__ == '__main__':
+    n = int(input())
+    for i in range(n):
+        print(i+1,end="")
+  #end="" is used to remove the default new line in python and print in the same line
