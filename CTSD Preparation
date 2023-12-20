@@ -1,0 +1,65 @@
+//Finding length of a string without using string function
+#include <stdio.h>
+int len(const char *str) {
+  int length = 0;
+  while (*str != '\0') {
+    length++;
+    str++;
+  }
+  return length;
+}
+int main(void) {
+  char str[] = "Hello, world!";
+  int length = len(str);
+  printf("The length of the string '%s' is %d\n", str, length);
+}
+
+//strcpy function
+#include <stdio.h>
+#include <string.h>
+int main(void) {
+  char source[] = "Sameer";
+  char destination[20];
+  strcpy(destination, source);
+  printf("Original string: %s\n", source);
+  printf("Copied string: %s\n", destination);
+}
+
+//strcat function
+#include <stdio.h>
+#include <string.h>
+int main(void) {
+  char source[] = "Sameer";
+  char dest[] = " Farhad";
+  strcat(source, dest);
+  printf("Copied string: %s\n", source);
+}
+
+//strcmp function
+#include <stdio.h>
+#include <string.h>
+int main(void) {
+  char source[] = "Sameer";
+  char dest[] = "Farhad";
+  int a = strcmp(source, dest);
+  if (a<0)
+  printf("source %s is smaller than dest %s",source,dest);
+  else if (a>0)
+  printf("destination %s is greater than source %s",dest,source);
+  else if (a=0)
+  printf("source %s has same length as destination %s",source,dest);
+}
+
+//strstr function
+#include <stdio.h>
+#include <string.h>
+int main(void) {
+  char source[] = "Sameer";
+  char dest[] = "am";
+  char* a = strstr(source, dest);
+  if (a)
+  printf("string found");
+  else
+  printf("not found");
+}
+
