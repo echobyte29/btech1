@@ -1,3 +1,72 @@
+//Linked List Program 1:
+#include <stdio.h>
+#include<stdlib.h>
+struct node {
+    int data1;
+    int data2;
+    struct node* link;
+};
+int main(void) {
+    int input;
+    struct node* head;
+    head=(struct node*)malloc(sizeof(struct node));
+    head->data1=45;
+    head->data2=56;
+    head->link=NULL;
+    printf("Which node do you want to print??\n");        //random try, actually printf("%d",head->data);
+    scanf("%d",&input);
+    switch (input) {
+  case 1:
+    printf("%d",head->data1);                    
+    break;
+  case 2:
+    printf("%d",head->data2);
+    break;
+  default:
+    printf("Node doesn't exist");
+}}
+
+//Linked list program 2:
+#include <stdio.h>
+#include<stdlib.h>
+struct node {
+    int data;
+    struct node* link;
+};
+int main() {
+    struct node* head=malloc(sizeof(struct node));
+    head->data=45;
+    head->link=NULL;                                              //doesn't get any output
+    struct node* current=malloc(sizeof(struct node));
+    current->data=98;
+    current->link=NULL;
+    head->link=current;
+    current=malloc(sizeof(struct node));
+    current->data;
+    current->link=NULL;
+    head->link->link=current;
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Finding length of a string without using string function
 #include <stdio.h>
 int len(const char *str) {
