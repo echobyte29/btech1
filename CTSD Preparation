@@ -48,6 +48,49 @@ int main() {
     return 0;
 }
 
+//Linked list program 3(printing the data in nodes)
+#include <stdio.h>
+#include <stdlib.h>
+struct node{
+    int data;
+    struct node* link;
+};
+void print_data(struct node* head){    
+    if(head=NULL)
+    printf("Linked List is empty");
+    struct node* ptr=NULL;
+    ptr=head;
+    while(ptr!=NULL){
+        printf("%d ",ptr->data);
+        ptr=ptr->link;
+    }}
+int main() {
+    print_data(head);
+}
+
+//Linked list program 4(counting the number of nodes)
+#include <stdio.h>
+#include<stdlib.h>
+struct node{
+    int data;
+    struct node* link;
+};
+void count_of_nodes(struct node* head){   
+    int count=0;
+    if(head=NULL)
+    printf("Linked List is empty");
+    struct node* ptr=NULL;
+    ptr=head;
+    while(ptr!=NULL){
+        count++;
+        ptr=ptr->link;
+    }
+printf("%d",count);
+}
+int main() {
+    count_of_nodes(head);
+}
+
 
 
 
