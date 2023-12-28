@@ -1,3 +1,164 @@
+//DOC-20231228-WA0000. Solutions
+//Calculator without using function
+#include <stdio.h>
+int main() {
+ char operation;
+  float a,b;
+  scanf("%f %f\n", &a, &b);
+  scanf("%c", &operation);
+
+  switch (operation) {
+    case '+':
+      printf("%.1f+%.1f=%.2f",a,b,a+b);
+      break;
+    case '-':
+      printf("%.1f-%.1f=%.2f",a,b,a-b);
+      break;
+    case '*':
+      printf("%.1f*%.1f=%.2f",a,b,a*b);
+      break;
+    case '/':
+      printf("%.1f/%.1f=%.2f",a,b,a/b);
+      break;
+    default:
+      printf("Error");
+  }
+
+  return 0;
+}
+
+//Calculator using function
+    
+//Finding factorial of a positive integer using recursion
+#include<stdio.h>
+int fact(int n);
+int main() {
+    int n;
+    printf("Enter a positive integer: ");
+    scanf("%d",&n);
+    printf("Factorial of %d = %d",n,fact(n));
+}
+int fact(int n){
+    if(n>=1) return n*fact(n-1);
+    else return 1;
+}
+
+//Sum of terms 9+99+999...
+#include <stdio.h>
+int main(){
+int n,i,t=9;
+int sum=0;
+printf("Input the number or terms: ");
+scanf("%d", &n);
+for (i=0;i<n;i++){
+    sum=sum+t;
+    t=(t*10)+9;
+        }
+printf("\nsum=%d",sum);
+    }
+
+//Temperature cases
+#include<stdio.h>
+int main(void){
+int a;
+printf("Enter temperature: ");
+scanf("%d",&a);
+if (a<0) printf("Freezing");
+else if (a>0 && a<=10) printf("Cold");
+else if (a>10 && a<=20) printf("Moderate");
+else if (a>20) printf("Warm");
+}
+
+//Student Score Grades
+#include<stdio.h>
+    int main(void){
+    int a;
+    printf("Enter student score: ");
+    scanf("%d",&a);
+    switch(a/10){
+        case (10):
+        case (9):
+        printf("A");
+        break;
+        case (8):
+        printf("B");
+        break;
+        case (7):
+        printf("C");
+        break;
+        case (6):
+        printf("D");
+        break;
+        case (5):
+        printf("F");
+        break;
+        default:
+        printf("Marks not categorized");
+    }
+    }
+
+//Leap year
+#include <stdio.h>
+int main(){
+   int y; 
+   printf("Enter the year to check: ");
+   scanf("%d",&y);
+   if (((y%4==0)&&(y%100!=0))||(y%400==0))
+      printf("It is a leap year");
+   else printf("It is not a leap year");
+   return 0;
+    }
+
+//Check if character is a vowel
+#include <stdio.h>
+int main(){
+    char c;
+    int lv,uv;
+    printf("Enter an alphabet: ");
+    scanf("%c", &c);
+    lv=(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+    uv=(c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U');
+    if (lv||uv) printf("%c is a vowel.", c);
+    else printf("%c is a consonant.", c);
+    return 0;
+}
+
+//Check whether the integer is positive or negative
+#include <stdio.h>
+int main(){
+    int a;
+    printf("Enter a integer: ");
+    scanf("%d",&a);
+    if (a<0) printf("%d is negative",a);
+    else if (a>0) printf("%d is positive",a);
+    else printf("Integer is 0");
+    return 0;
+}
+
+//Pattern printing *
+#include<stdio.h>
+int main(void){
+int n;
+scanf("%d",&n);
+for(int i=1;i<=n;i++){
+for(int j=1;j<=i;j++){
+printf("*");
+}
+printf("\n");
+}
+}
+
+//
+
+
+
+
+
+
+
+
+
+
 //Linked List Program 1:
 #include <stdio.h>
 #include<stdlib.h>
