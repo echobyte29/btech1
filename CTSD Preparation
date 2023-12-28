@@ -148,8 +148,43 @@ printf("\n");
 }
 }
 
-//
+//perfect number
+#include <stdio.h>
+int main() {
+    int n,s=0;
+    scanf("%d",&n);
+    for(int i=1;i<n;i++){
+        if(n%i==0)
+        s=s+i;
+    }
+    if(s==n)
+    printf("yes");  
+  return 0;
+}
 
+//Distance between two cities with coordinates
+#include <stdio.h>
+#include <math.h>
+int main() {
+    float x1,y1,x2,y2;
+    scanf("%f%f%f%f",&x1,&y1,&x2,&y2);
+    int result=((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1));
+    printf("%.4f",sqrt(result));
+    return 0;
+}
+
+//square of a number
+#include <stdio.h>
+int mul(int n){
+return n*n;
+}
+int main(){
+    int a;
+    scanf("%d",&a);
+    int result=mul(a);
+    printf("%d",result);
+    return 0;
+}
 
 
 
