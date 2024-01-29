@@ -519,3 +519,30 @@ int main() {
   }
   return 0;  
 }
+
+//Insertion sort
+#include<stdio.h>
+void printarray(int arr[], int n){
+    for(int i=0;i<n;i++){
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+void insertionsort(int arr[], int n){
+    for(int j=1;j<n;j++){
+        int temp=arr[j];
+        while(j>0&&temp<arr[j-1]){
+            arr[j]=arr[j-1];
+            j--;
+        }
+        arr[j]=temp;
+    }
+}
+int main(){
+    int arr[]={65,72,34,96,69};
+        int n=sizeof(arr)/sizeof(arr[0]);
+        insertionsort(arr,n);
+        printf("sorted array is: ");
+        printarray(arr,n);
+    }
+    
