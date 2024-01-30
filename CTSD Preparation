@@ -532,17 +532,22 @@ void insertionsort(int arr[], int n){
     for(int j=1;j<n;j++){
         int temp=arr[j];
         while(j>0&&temp<arr[j-1]){
-            arr[j]=arr[j-1];
-            j--;
+        arr[j]=arr[j-1];
+        j--;
         }
         arr[j]=temp;
-    }
-}
-int main(){
-    int arr[]={65,72,34,96,69};
+    }}
+    int main(){
+        int x;
+        printf("Enter no. of elements: ");
+    scanf("%d",&x);
+    int arr[x];
+    printf("Enter the elements: ");
+    for (int i=0;i<x;i++){
+        scanf("%d",&arr[i]);}
         int n=sizeof(arr)/sizeof(arr[0]);
         insertionsort(arr,n);
-        printf("sorted array is: ");
+        printf("Sorted array is: ");
         printarray(arr,n);
     }
     
