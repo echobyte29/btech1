@@ -227,3 +227,133 @@ int main() {
    reverse(head);
     return 0;
 }
+
+
+
+//Queue using a linked list
+
+#include <stdio.h>
+#include <stdlib.h>
+
+// Node structure for linked list
+typedef struct Node {
+    int data;
+    struct Node* next;
+} Node;
+
+// Queue structure
+typedef struct Queue {
+    Node* front;
+    Node* rear;
+} Queue;
+
+// Function to create a new node
+Node* createNode(int value) {
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->data = value;
+    newNode->next = NULL;
+    return newNode;
+}
+
+// Function to initialize the queue
+Queue* createQueue() {
+    Queue* queue = (Queue*)malloc(sizeof(Queue));
+    queue->front = NULL;
+    queue->rear = NULL;
+    return queue;
+}
+
+// Function to insert an element into the queue
+void enqueue(Queue* queue, int value) {
+    Node* newNode = createNode(value);
+    if (queue->rear == NULL) {
+        queue->front = newNode;
+        queue->rear = newNode;
+    } else {
+        queue->rear->next = newNode;
+        queue->rear = newNode;
+    }
+    printf("Inserted %d into the queue.\n", value);
+}
+
+// Function to delete an element from the queue
+void dequeue(Queue* queue) {
+    if (queue->front == NULL) {
+        printf("Queue is empty.\n");
+        return;
+    }
+    Node* temp = queue->front;
+    int value = temp->data;
+    queue->front = queue->front->next;
+    if (queue->front == NULL) {
+        queue->rear = NULL;
+    }
+    free(temp);
+    printf("Deleted %d from the queue.\n", value);
+}
+
+// Function to display the elements in the queue
+void display(Queue* queue) {
+    if (queue->front == NULL) {
+        printf("NULL\n");
+        return;
+    }
+    Node* temp = queue->front;
+    printf("Queue: ");
+    while (temp != NULL) {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+}
+
+//or
+
+void display(Queue* queue) {
+    if (queue->front == NULL) {
+        printf("NULL\n");
+      return;
+    }
+
+    Node* temp = queue->front;
+    printf("->");  // Print the initial "->"
+
+    while (temp != NULL) {
+        printf("%d", temp->data);  // Remove "->" after printing the data
+
+        if (temp->next != NULL) {  // Check if there is a next node
+            printf("->");  // Print "->" only if there is a next node
+        }
+
+        temp = temp->next;
+    }
+
+    printf("\n");  // Print a newline at the end
+}
+
+int main() {
+    Queue* queue = createQueue();
+    int choice, value;
+    while (1) {
+        printf("1. Insert\n2. Delete\n3. Display\n4. Exit\nEnter your choice: ");
+        scanf("%d", &choice);
+        switch (choice) {
+            case 1:
+                printf("Enter the value to insert: ");
+                scanf("%d", &value);
+                enqueue(queue, value);
+                break;
+            case 2:
+                dequeue(queue);
+                break;
+            case 3:
+                display(queue);
+                break;
+            case 4:
+                exit(0);
+            default:
+                printf("Invalid choice.\n");
+        }
+    }
+    return 0;
+}
