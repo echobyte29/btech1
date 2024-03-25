@@ -1,0 +1,229 @@
+//SLL Insert at head,middle,end and Delete at head,middle,end
+#include <stdio.h>
+#include <stdlib.h>
+struct Node{
+  int data;
+  struct Node *next;
+};
+struct Node *create(struct Node *head){
+    struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+    int data;
+    scanf("%d",&data);
+    ptr->data=data;
+    if(head==NULL){
+        head=ptr;
+        ptr->next=NULL;
+    }
+    else{
+        
+    }
+}
+void print(struct Node *head){
+    while(head!=NULL){
+        printf("%d->",head->data);
+        head=head->next;
+    }
+}
+struct Node *insertHead(struct Node *head,int data){
+      struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+      ptr->data=data;
+      ptr->next=head;
+}
+struct Node *insertNode(struct Node *head,int data,int position){
+     struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+     struct Node *temp=head;
+     int i=0;
+     while(i!=position-1){
+         temp=temp->next;
+         i++;
+     }
+     ptr->data=data;
+     ptr->next=temp->next;
+     temp->next=ptr;
+     return head;
+}
+struct Node *deleteHead(struct Node *head){
+    struct Node *temp=head;
+    head=head->next;
+    free(temp);
+    return head;
+}
+struct Node *deleteNode(struct Node *head,int position){
+    struct Node *p=head;
+    struct Node *q=head->next;
+    if(position==0){
+        struct Node *temp=head;
+    head=head->next;
+    free(temp);
+    return head;
+    }
+    int i=0;
+    while(i!=position-1){
+        p=p->next;
+        q=q->next;
+        i++;
+    }
+    p->next=q->next;
+    free(q);
+    return head;
+}
+struct Node *deleteEnd(struct Node *head){
+     struct Node *p=head;
+    struct Node *q=head->next;
+     while(q->next!=NULL){
+        p=p->next;
+        q=q->next;
+    }
+    p->next=NULL;
+    free(q);
+    return head;
+}
+struct Node *insertEnd(struct Node * head,int data){
+     struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+     struct Node *temp=head;
+     while(temp->next!=NULL){
+         temp=temp->next;
+     }
+    
+     ptr->data=data;
+      temp->next=ptr;
+     ptr->next=NULL;
+     return head;
+}
+
+int main() {
+   struct Node *head=NULL;
+   head=create(head);
+   head=insertHead(head,2);
+   head=insertNode(head,1,2);
+   head=insertEnd(head,3);
+   head=deleteHead(head);
+   head=deleteNode(head,0);
+   head=deleteEnd(head);
+   print(head);
+    return 0;
+}
+
+
+
+//DLL Insert at head,middle,end and Delete at head,middle,end
+#include <stdio.h>
+#include <stdlib.h>
+struct Node{
+    struct Node *prev;
+  int data;
+  struct Node *next;
+};
+struct Node *create(struct Node *head){
+    struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+    int data;
+    scanf("%d",&data);
+    ptr->data=data;
+    if(head==NULL){
+        head=ptr;
+        ptr->next=NULL;
+        ptr->prev=NULL;
+    }
+}
+void print(struct Node *head){
+    while(head!=NULL){
+        printf("%d->",head->data);
+        head=head->next;
+    }
+}
+struct Node *insertHead(struct Node *head,int data){
+      struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+      ptr->data=data;
+      ptr->next=head;
+      head->prev=ptr;
+      ptr->prev=NULL;
+}
+struct Node *insertNode(struct Node *head,int data,int position){
+     struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+     struct Node *temp=head;
+     int i=0;
+     while(i!=position-1){
+         temp=temp->next;
+         i++;
+     }
+   ptr->data = data;          // Assigning data to the new node
+ptr->next = temp->next;  
+temp->next = ptr; // Linking the new node to the next node after temp
+ptr->prev = temp;          // Linking the new node back to temp       // Linking temp to the new node
+if (ptr->next != NULL) {
+    temp->next->prev = ptr;
+}
+return head;          
+}
+
+
+struct Node *insertEnd(struct Node * head,int data){
+     struct Node *ptr=(struct Node *)malloc(sizeof(struct Node));
+     struct Node *temp=head;
+     while(temp->next!=NULL){
+         temp=temp->next;
+     }
+    
+     ptr->data=data;
+      temp->next=ptr;
+      ptr->prev=temp;
+     ptr->next=NULL;
+     return head;
+}
+void reverse(struct Node *head){
+    struct Node *temp=head;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    while(temp!=NULL){
+   printf("%d->",temp->data);
+   temp=temp->prev;
+    }
+}
+struct Node *deleteHead(struct Node *head){
+    struct Node *temp=head;
+    head=head->next;
+    free(temp);
+    head->prev=NULL;
+}
+struct Node *deleteNode(struct Node *head,int position){
+    struct Node *p=head;
+    struct Node *q=head->next;
+    int i=0;
+    while(i!=position-1 ){
+        p=p->next;
+        q=q->next;
+        i++;
+    }
+    p->next = q->next;
+    if (q->next != NULL){
+        q->next->prev = p;
+    }
+    free(q);
+    return head;
+}
+struct Node *deleteEnd(struct Node *head){
+    struct Node *p=head;
+    struct Node *q=head->next;
+    while(q->next!=NULL){
+        p=p->next;
+        q=q->next;
+    }
+     free(q);
+    p->next=NULL;
+    return head;
+}
+int main() {
+   struct Node *head=NULL;
+  head=create(head);
+  head=insertHead(head,1);
+  head=insertNode(head,2,2);
+  head=insertEnd(head,1);
+  head=deleteHead(head);
+    head=deleteNode(head,2);
+    head=deleteEnd(head);
+  print(head);
+  printf("\n");
+   reverse(head);
+    return 0;
+}
