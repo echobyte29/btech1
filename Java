@@ -30,3 +30,72 @@ public class UserInput {
         }
     }
 }
+
+//Calculating percentage of 5 subject marks
+
+import java.util.*;
+public class UserInput {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Marks of subject 1: ");
+        int a = sc.nextInt();
+        System.out.print("Marks of subject 2: ");
+        int b = sc.nextInt();
+        System.out.print("Marks of subject 3: ");
+        int c = sc.nextInt();
+        System.out.print("Marks of subject 4: ");
+        int d = sc.nextInt();
+        System.out.print("Marks of subject 5: ");
+        int e = sc.nextInt();
+        if (a<=100 && b<=100 && c<=100 && d<=100 && e<=100) {
+            int x = a + b + c + d + e;
+                int o = x / 5;
+                int per = o * 100 / 100;
+                System.out.print("Total percentage: " + per + "%");
+            }
+            else{
+                System.out.print("Maximum marks of each subject is 100");
+            }
+    }
+}
+
+//Write a program for sum of three numbers
+
+import java.util.*;
+public class UserInput {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter 1st Number: ");
+        int a = sc.nextInt();
+        System.out.print("Enter 2nd Number: ");
+        int b = sc.nextInt();
+        System.out.print("Enter 3rd Number: ");
+        int c = sc.nextInt();
+        int sum = a+b+c;
+        System.out.println("Sum of three numbers is: " + sum);
+    }
+}
+
+//write a program to calculate CGPA using marks of three subjects
+
+import java.util.*;
+public class UserInput {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter marks of Subject 1: ");
+        int a = sc.nextInt();
+        System.out.print("Enter marks of Subject 2: ");
+        int b = sc.nextInt();
+        System.out.print("Enter marks of Subject 3: ");
+        int c = sc.nextInt();
+        if (a <= 100 && b <= 100 && c <= 100) {
+            int sum = a + b + c;
+            int o = sum/5;
+            int per = o*100/100;
+            double cgpa = per/9.5;
+            System.out.println("CGPA is: " + cgpa);
+            
+        }
+        else System.out.println("Max marks per subject is 100");
+    }
+}
