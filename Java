@@ -1,0 +1,32 @@
+//basic java program woth user input
+
+import java.util.*;
+public class UserInput {
+    public static void main(String[] args){
+        System.out.println(" it works ");
+        Scanner sc = new Scanner(System.in);
+        //sys.in means taking input from keyboard
+        System.out.println("enter 1: ");
+        int a = sc.nextInt();
+        System.out.println("enter 2: ");
+        int b = sc.nextInt();
+        int sum = a+b;
+        System.out.println("sum is: " + sum);
+        if((a-b)>(b-a)){
+            int dif = a-b;
+            System.out.println("difference is: " + dif);
+        }else{
+            int dif = b-a;
+            System.out.println("difference is: " + dif);
+        }
+        int product = a*b;
+        System.out.println("product is: " + product);
+        if(a/b > b/a){
+            int div = a/b;
+            System.out.println("quotient is: " + div);
+        }else{
+            int div = b/a;
+            System.out.println("quotient is: " + div);
+        }
+    }
+}
