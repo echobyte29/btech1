@@ -94,8 +94,46 @@ public class UserInput {
             int per = o*100/100;
             double cgpa = per/9.5;
             System.out.println("CGPA is: " + cgpa);
-            
+
+//give name input and get output welcome message
+
+import java.util.*;
+public class UserInput {
+    public static void main(String[] args){
+        System.out.println("What is your name?");
+        Scanner sc = new Scanner(System.in);
+        String a = sc.next();
+        System.out.print("Hello " + a + ", have a good day");
+    }
+}
+
+//Conversion of Km to Miles
+
+import java.util.*;
+public class UserInput {
+    public static void main(String[] args){
+        System.out.print("Enter no. of Km: ");
+        Scanner sc = new Scanner(System.in);
+        double a = sc.nextDouble();
+        double mile = 0.621371 * a;
+        System.out.format("Conversion of Km to Miles: %.2f", mile);
+    }
+}
+
+
         }
         else System.out.println("Max marks per subject is 100");
     }
 }
+
+//Check if the given number is an integer
+
+import java.util.*;
+public class UserInput {
+    public static void main(String[] args){
+        System.out.print("Enter a number: ");
+        Scanner sc = new Scanner(System.in);
+        System.out.println(sc.hasNextInt());
+    }
+}
+
